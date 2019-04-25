@@ -22,7 +22,7 @@ module.exports = function(environment) {
       // when it is created
     },
     survey: {
-      title: 'The Most Amazing Survey!',
+      title: 'The Most Amazing Survey',
       startDate: new Date('2019-04-25T14:32:42.188Z'),
       endDate: new Date('2019-05-25T14:32:42.188Z'),
       contactEmail: 'face@facey.com'
