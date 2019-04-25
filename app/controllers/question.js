@@ -8,6 +8,14 @@ export default Controller.extend({
         return this.application.model.toArray();
     }),
 
+    questionName: computed('model', function() {
+      return this.model.id.split('-').slice(1).join(' ');
+    }),
+
+    questionNumber: computed('model', 'allQuestions.[]', function() {
+      return this.allQuestions.indexOf(this.model) + 1;
+    }),
+
     prevQuestion: computed('model', 'allQuestions.[]', function (){
       let index = this.allQuestions.indexOf(this.model);
       

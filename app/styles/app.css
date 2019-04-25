@@ -1,0 +1,22 @@
+*, *:after {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0 auto;
+  padding: 0;
+}
+.survey-nav {
+  align-items: center;
+  background-color: #362a75;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+  margin-top: 1em;
+}
+.survey-nav a {
+  color: white;
+}

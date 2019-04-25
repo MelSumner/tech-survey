@@ -1,5 +1,6 @@
 ---
 type: ranking
+question: Rank these candies in order of yumminess.
 options: 
   - Cadbury's Flake
   - Kit Kat
@@ -7,5 +8,3 @@ options:
   - Twizzlers
   - Junior Mints
 ---
-
-We would love to know your favorite color!

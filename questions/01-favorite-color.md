@@ -2,7 +2,7 @@
 type: single-select
 hasOther: true
 question: What is your favorite color?
-choices: 
+options: 
   - red
   - orange
   - yellow
