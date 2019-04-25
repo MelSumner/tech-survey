@@ -16,28 +16,43 @@ body {
   padding: 0;
 
 }
-h1 {
-  font-family: $font-header;
-  color: $color-text;
-  width: auto;
-  padding: 0.5em;
-  text-rendering: optimizeLegibility;
-  font-kerning: normal;
-  border-left: 5px solid $color-text;
+header {
+  min-height: 8vh;
 }
 main {
   display: flex;
   justify-content: center;
+  min-height: 87vh;
 }
+footer {
+  min-height: 5vh;
+}
+
+h1 {
+  color: $color-text;
+  font-family: $font-header;
+  font-kerning: normal;
+  margin: 0;
+  padding: 0.5em;
+  text-rendering: optimizeLegibility;
+  width: auto;
+  @media screen and (min-width: 768px){
+    border-left: 5px solid $color-text;
+  }
+}
+
 .survey-wrapper {
+  min-width: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
   @media screen and (min-width: 768px) {
+    min-width: 80%;
     width: 80%;
   }
   @media screen and (min-width: 992px) {
+    min-width: 50%;
     width: 50%;
   }
   .survey-questions {
@@ -49,10 +64,50 @@ main {
   align-items: center;
   color: #362a75;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   margin-top: 1em;
-  padding: 0 1em;
+  padding: 0;
   width: 100%;
+  @media screen and (min-width: 768px) {
+    flex-flow: row nowrap;
+  }
+  .btn-prev,
+  .btn-next {
+    align-items: center;
+    border: 3px solid transparent;
+    display: flex;
+    font-size: 0.9em;
+    font-weight: bold;
+    height: 44px;
+    justify-content: center;
+    letter-spacing: 1px;
+    line-height: 44px;
+    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 50%;
+
+    @media screen and (min-width: 750px) {
+      border: 3px solid transparent;
+      font-size: 1em;
+      font-weight: normal;
+      justify-content: flex-start;
+      letter-spacing: normal;
+      padding: 0 1em;
+      text-transform: none;
+      width: 33%;
+    }
+  }
+  .progress-text {
+    width: 0px;
+    color: transparent;
+    @media screen and (min-width:750px){
+      display: flex;
+      width: 33%;
+      color: $color-text;
+    }
+  }
   a {
     color: $color-text;
   }
@@ -61,16 +116,16 @@ main {
 .button {
   background-color: $color-text;
   color: $color-background;
+  font-size: 0.9em;
+  font-weight: bold;
+  letter-spacing: 2px;
   line-height: 44px;
   min-height: 44px;
   min-width: 213.576px;
-  text-decoration: none;
   padding: 0 6px;
   text-align: center;
-  font-size: 0.9em;
+  text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
   @media screen and (min-width: 992px) {
     margin: 3em auto;
   }
@@ -81,13 +136,18 @@ main {
   border: 3px solid $color-text;
   display: flex;
   font-family: $font-header;
-  font-size: 3.5em;
+  font-size: 1.5em;
   font-weight: bold;
-  height: 150px;
+  height: 50px;
   justify-content: center;
   line-height: 1;
-  width: 150px;
   margin: 0;
+  width: 50px;
+  @media screen and (min-width: 768px) {
+    font-size: 3.5em;
+    height: 150px;
+    width: 150px;
+  }
 }
 .question-text {
   font-size: 1.4em;
@@ -95,9 +155,6 @@ main {
   font-weight: bold;
 }
 
-.btn-next {
-
-}
 a.btn-next {
   cursor: pointer;
 }
@@ -109,4 +166,18 @@ a.btn-prev {
 }
 p.btn-prev {
   cursor: not-allowed;
+}
+
+.form-group {
+  margin-top: 1em;
+  input[type="text"], textarea {
+    border-radius: 4px;
+    clear: both;
+    display: block;
+    font: inherit;
+    margin: 0;
+    max-width: 500px;
+    padding: 0.4em;
+    width: 100%;
+  }
 }

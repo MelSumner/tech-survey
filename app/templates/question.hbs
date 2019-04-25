@@ -16,52 +16,55 @@
     <div role="radiogroup" aria-labelledby="single-select-group-label">
       <p class="question-text" id="single-select-group-label">{{this.model.question}}</p>
       {{#each this.model.options as |option|}}
-      <div class="form-group">
-        <input type="radio" id={{option}} name={{questionName}} value={{option}}>
+      <div class="form-check">
+        <input type="radio" id={{option}} name={{questionName}}
+          value={{option}}>
         <label for={{option}}>{{option}} </label>
       </div>
       {{/each}}
     </div>
     {{else if (eq this.model.type "multi-select")}}
-    
+
     <p class="question-text">{{this.model.question}}</p>
     {{#each this.model.options as |option|}}
-    <div class="form-group">
-      <input type="checkbox" id={{option}} name={{questionName}} value={{option}}>
+    <div class="form-check">
+      <input type="checkbox" id={{option}} name={{questionName}}
+        value={{option}}>
       <label for={{option}}>{{option}}</label>
-    </div>      
+    </div>
     {{/each}}
 
     {{else if (eq this.model.type "textbox")}}
     <div class="form-group">
-      <label for="" class="question-text">{{this.model.question}}</label>
-      <input type="text" />
+      <label for={{questionName}} class="question-text">{{this.model.question}}</label>
+      <input type="text" id={{questionName}}>
     </div>
     {{else if (eq this.model.type "comment-box")}}
     <div class="form-group">
-      <label for="">{{this.model.question}}</label>
-      <textarea />
-    </div>
-    {{/if}}
-</div>
+      <label for={{questionName}} class="question-text">{{this.model.question}}</label>
+      <textarea id={{questionName}} name={{questionName}} rows="10" />
+      </div>
+      {{/if}}
+  </div>
 
   <div class="survey-nav">
-  {{#if prevQuestion}}
-    {{#link-to "question" prevQuestion}}
-      Previous Question
+    {{#if prevQuestion}}
+    {{#link-to "question" prevQuestion class="btn-prev"}}
+    Previous Question
     {{/link-to}}
     {{else}}
     <p class="btn-prev">Previous Question</p>
-  {{/if}}
+    {{/if}}
 
-  <p class="progress-text">Question {{questionNumber}} of {{allQuestions.length}}</p>
+    <p class="progress-text">Question {{questionNumber}} of
+      {{allQuestions.length}}</p>
 
-  {{#if nextQuestion}}
-    {{#link-to "question" nextQuestion}}
-      Next Question
+    {{#if nextQuestion}}
+    {{#link-to "question" nextQuestion class="btn-next"}}
+    Next Question
     {{/link-to}}
     {{else}}
     <p class="btn-next">Next Question</p>
-  {{/if}}
+    {{/if}}
   </div>
 </div>
