@@ -1,7 +1,17 @@
 # tech-survey
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is an app to empower the creation of accessible surveys. It is built with Ember.js.
+
+## Design Details
+
+Supported Question Types:
+
+- Single Select
+- Multi Select
+- Textbox
+- Comment Box
+- Rating
+- Ranking
 
 ## Prerequisites
 

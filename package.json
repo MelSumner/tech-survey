@@ -2,10 +2,10 @@
   "name": "tech-survey",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for tech-survey goes here",
-  "repository": "",
+  "description": "a tech survey app, built with Ember.js",
+  "repository": "https://github.com/MelSumner/tech-survey",
   "license": "MIT",
-  "author": "",
+  "author": "Melanie Sumner <melaniersumner@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"

@@ -1,1 +1,17 @@
 {{outlet}}
+
+{{#if prevQuestion}}
+  {{#link-to "question" prevQuestion}}
+    Previous Question
+  {{/link-to}}
+  {{else}}
+  <p class="text-disabled">Previous Question</p>
+{{/if}}
+
+{{#if nextQuestion}}
+  {{#link-to "question" nextQuestion}}
+    Next Question
+  {{/link-to}}
+  {{else}}
+  <p class="text-disabled">Next Question</p>
+{{/if}}

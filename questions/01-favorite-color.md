@@ -1,6 +1,7 @@
 ---
-type: radio
+type: single-select
 hasOther: true
+question: What is your favorite color?
 choices: 
   - red
   - orange
@@ -10,5 +11,3 @@ choices:
   - indigo
   - violet
 ---
-
-We would love to know your favorite colour!
