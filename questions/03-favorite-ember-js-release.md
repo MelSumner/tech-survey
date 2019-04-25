@@ -5,6 +5,6 @@ hasOther: true
 options: 
   - '1.13'
   - '2.18'
-  - 'classic'
-  - 'octane'
+  - '3.8'
+  - '3.9'
 ---

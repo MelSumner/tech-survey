@@ -1,7 +1,7 @@
 ---
 type: single-select
 hasOther: true
-question: What is your favorite color?
+question: Which of these colors inspires you the most?
 options: 
   - red
   - orange
