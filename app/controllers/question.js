@@ -1,15 +1,25 @@
 import Controller, { inject as controller } from '@ember/controller';
 import { computed } from '@ember/object';
+import { storageFor } from 'ember-local-storage';
 
 export default Controller.extend({
+    answers: storageFor('answers'),
+
+    answerValue: computed('model.id', {
+      get() {
+        return this.get(`answers.${this.model.id}`);
+      },
+
+      set(oldValue, newValue) {
+        this.set(`answers.${this.model.id}`, newValue);
+        return newValue;
+      }
+    }),
+
     application: controller(),
 
     allQuestions: computed('application.model.[]', function() {
         return this.application.model.toArray();
-    }),
-
-    questionName: computed('model', function() {
-      return this.model.id.split('-').slice(1).join(' ');
     }),
 
     questionNumber: computed('model', 'allQuestions.[]', function() {

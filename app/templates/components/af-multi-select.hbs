@@ -1,0 +1,9 @@
+<p class="question-text">{{this.model.question}}</p>
+{{#each this.model.options as |option|}}
+<div class="form-check">
+  <input type="checkbox" id={{option}} name={{questionName}}
+    value={{option}}>
+  <label for={{option}}>{{option}}</label>
+</div>
+{{/each}}
+{{yield}}

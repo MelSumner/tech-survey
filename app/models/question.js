@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { computed } from '@ember/object';
 const { Model } = DS;
 
 export default Model.extend({
@@ -11,4 +12,8 @@ export default Model.extend({
   options: DS.attr(),
   question: DS.attr(),
   type: DS.attr(),
+
+  questionName: computed('id', function() {
+    return this.id.split('-').slice(1).join('-');
+  }),
 });

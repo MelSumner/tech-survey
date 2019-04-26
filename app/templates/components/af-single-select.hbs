@@ -1,0 +1,11 @@
+<div role="radiogroup" aria-labelledby="single-select-group-label">
+  <p class="question-text" id="single-select-group-label">{{this.model.question}}</p>
+  {{#each this.model.options as |option|}}
+  <div class="form-check">
+    <input type="radio" id={{option}} name={{this.model.questionName}}
+      checked={{eq answerValue option}} onchange={{action 'changed' option}}>
+      
+    <label for={{option}}>{{option}} </label>
+  </div>
+  {{/each}}
+</div>
