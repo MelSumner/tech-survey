@@ -103,6 +103,7 @@ h1 {
   .progress-text {
     width: 0px;
     color: transparent;
+
     @media screen and (min-width:750px){
       display: flex;
       width: 33%;
@@ -113,20 +114,41 @@ h1 {
     color: $color-text;
   }
 }
+.button {
+  align-items: center;
+  align-self: center;
+  background-color: $color-text;
+  border-color: $color-text;
+  color: $color-background;
+  display: flex;
+  font-family: inherit;
+  font-size: 0.9em;
+  font-weight: bold;
+  height: 44px;
+  justify-content: center;
+  letter-spacing: 2px;
+  min-width: 213.576px;
+  padding: 0 6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  @media screen and (min-width: 750px) {
+    border: 3px solid transparent;
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: normal;
+    max-width: 300px;
+    padding: 0 1em;
+    text-transform: none;
+    width: 33%;
+  }
+
+}
 
 .button-start {
   align-self: center;
-  background-color: $color-text;
-  color: $color-background;
   font-size: 0.9em;
   font-weight: bold;
   letter-spacing: 2px;
-  line-height: 44px;
-  height: 44px;
-  min-width: 213.576px;
-  padding: 0 6px;
-  text-align: center;
-  text-decoration: none;
   text-transform: uppercase;
   @media screen and (min-width: 992px) {
     margin: 3em auto;
@@ -188,4 +210,74 @@ p.btn-prev {
   font-size: 0.8em;
   margin: -25px auto 25px auto;
   padding: 0;
+}
+.number {  
+	color: $color-text;
+  -webkit-text-fill-color: $color-background; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $color-text;
+	font-size:6em;
+}
+.af-rating {
+  @media screen and (min-width:750px) {
+    display: flex;
+    max-width: 100%;
+    flex-flow: row wrap;
+    .question-text, .text-help {
+      min-width:100%;
+    }
+    .form-check {
+      display: flex;
+      label {
+        border: 1px solid magenta;
+        background-color: aliceblue;
+        margin-left: -10px;
+        position: relative;
+        padding: 0.25em;
+
+        input[type="radio"] {
+          margin-left: 10px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          z-index: -1;  
+        }
+      }
+
+    }
+  }
+}
+
+fieldset.rating {
+  padding: 1em;
+  border: none;
+  padding-left: 0;
+  margin: 25px 0;
+  legend {
+    // question-text
+    margin-bottom: 10px;
+  }
+}
+.rating-label {  
+  font-family: 'Noto Serif', sans-serif;
+  color: $color-text;
+  -webkit-text-fill-color: white; 
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $color-text;
+	font-size: 3em;
+	padding:0 0.5em;
+	&:hover {
+		cursor: pointer;
+	}
+}
+.rating-radiogroup {
+	.rating-radio {
+    -webkit-appearance: none;
+		appearance: none;
+	}
+	.rating-radio:checked + .rating-label {
+		-webkit-text-fill-color: $color-text;
+		transition: all .2s ease-in-out;
+		background-color: $color-background;
+	}	
 }

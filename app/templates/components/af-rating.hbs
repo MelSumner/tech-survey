@@ -1,18 +1,21 @@
-<div role="radiogroup" aria-labelledby={{this.model.question}}>
-  <p class="question-text" id={{this.model.question}}>{{this.model.question}}</p>
+<fieldset class="rating">
+  <legend class="question-text">
+    {{this.model.question}}
+  </legend>
   {{#if this.model.content}}
     <p class="text-help">{{this.model.content}}</p>
   {{/if}}
-  {{#each options as |option|}}
-    <div class="form-check">
+  <div class="rating-radiogroup" role="radiogroup" aria-labelledby={{this.model.question}}>
+    {{#each options as |option|}}
       <input 
-        type="radio" 
-        id="rating-{{option}}" 
-        name={{model.questionName}}
-        checked={{eq answerValue option}} 
-        onchange={{action 'changed' option}}
-      >
-      <label for="rating-{{option}}">{{option}}</label>
-    </div>
-  {{/each}}
-</div>
+          type="radio" 
+          id="rating-{{option}}" 
+          name={{model.questionName}}
+          checked={{eq answerValue option}} 
+          onchange={{action "changed" option}}
+          class="rating-radio"
+        >
+      <label for="rating-{{option}}" class="rating-label">{{option}}</label>
+    {{/each}}	
+  </div>
+</fieldset>

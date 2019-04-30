@@ -12,7 +12,6 @@ export default Component.extend({
                 values = [...this.answerValue, value];
             }
 
-            console.log(values);
             this.set('answerValue', values);
         }
     }

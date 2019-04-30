@@ -1,32 +1,32 @@
-<div class="survey-wrapper">
+<form action="self" method="post" class="survey-wrapper" target="_blank">
   <div class="survey-questions">
     <p class="question">Q{{questionNumber}}</p>
-
-    {{#if (is-component (concat 'af-' this.model.type))}}
-      {{component (concat 'af-' this.model.type) answerValue=answerValue model=model}}
+    {{#if (is-component (concat "af-" this.model.type))}}
+      {{component (concat "af-" this.model.type) answerValue=answerValue model=model}}
     {{else}}
       <p>I'm sorry, I can't let you do that, Dave.</p>
     {{/if}}
   </div>
-
   <div class="survey-nav">
     {{#if prevQuestion}}
-    {{#link-to "question" prevQuestion class="btn-prev"}}
-    Previous Question
-    {{/link-to}}
+      {{#link-to "question" prevQuestion class="btn-prev"}}
+        Previous Question
+      {{/link-to}}
     {{else}}
-    <p class="btn-prev">Previous Question</p>
+      <p class="btn-prev">Previous Question</p>
     {{/if}}
 
-    <p class="progress-text">Question {{questionNumber}} of
-      {{allQuestions.length}}</p>
+    <p class="progress-text">
+      Question {{questionNumber}} of {{allQuestions.length}}
+    </p>
 
     {{#if nextQuestion}}
-    {{#link-to "question" nextQuestion class="btn-next"}}
-    Next Question
-    {{/link-to}}
+      {{#link-to "question" nextQuestion class="btn-next"}}
+        Next Question
+      {{/link-to}}
     {{else}}
-    <p class="btn-next">Next Question</p>
+      <button type="submit" class="button">Submit your responses</button>
     {{/if}}
   </div>
-</div>
+
+</form>
